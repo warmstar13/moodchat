@@ -1,0 +1,5 @@
+mc_env/
+*.bin
+*.gguf
+__pycache__/
+*.pyc

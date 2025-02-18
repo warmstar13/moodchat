@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from .forms import ChatUploadForm
+from .analysis import analyze_chat
 
 def main_page(request):
     """Render the main page."""
@@ -16,6 +17,3 @@ def upload_chat(request):
     else:
         form = ChatUploadForm()
     return render(request, 'website/upload.html', {'form': form})
-
-def analyze_chat(chat_file):
-    return "dummy analysis"
