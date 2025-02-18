@@ -12,7 +12,7 @@ def upload_chat(request):
             chat_file = request.FILES['chat_file']
 
             analysis = analyze_chat(chat_file)
-            return render(request, 'website/chat_analysis.html', {'analysis': analysis})
+            return render(request, 'website/result.html', {'analysis': analysis})
     else:
         form = ChatUploadForm()
     return render(request, 'website/upload.html', {'form': form})
