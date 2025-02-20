@@ -1,14 +1,12 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Upload Chat</title>
-</head>
-<body>
+{% extends "website/base.html" %}
+
+{% block title %}Upload Chat Export{% endblock %}
+
+{% block content %}
     <h1>Upload Chat Export</h1>
     <form method="post" enctype="multipart/form-data">
         {% csrf_token %}
         {{ form.as_p }}
         <button type="submit">Upload</button>
     </form>
-</body>
-</html>
+{% endblock %}

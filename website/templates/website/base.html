@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}ChatMood{% endblock %}</title>
+</head>
+<body>
+    <header>
+        <h1>Welcome to ChatMood</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="{% url 'website:main_page' %}">Home</a></li>
+            <li><a href="{% url 'website:upload' %}">Analyze your chat</a></li>
+        </ul>
+    </nav>
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+</body>
+</html>
