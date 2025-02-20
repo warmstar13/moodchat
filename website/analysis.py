@@ -34,7 +34,7 @@ def analyze_chat(chat_file):
 
 def split_text_to_messages(text):
     strings = text.split("\n")
-    regex = r'(.+?), \[(\d{2}\.\d{2}\.\d{4}, \d{2}:\d{2})\]'
+    regex = r'(.+?), \[(\d{2}\.\d{2}\.\d{4} \d{2}:\d{2})\]'
     content = ""
     messages = []
     cur_message = None
@@ -49,7 +49,7 @@ def split_text_to_messages(text):
             content = ""
             sender = match.group(1)
             date_str = match.group(2)
-            date = datetime.strptime(date_str, '%d.%m.%Y, %H:%M')
+            date = datetime.strptime(date_str, '%d.%m.%Y %H:%M')
             cur_message = Message(date, sender)
         else:
             if cur_message is not None:
